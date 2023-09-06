@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #6C5B7B, #C06C84, #F67280);
+    font-family: 'Arial', sans-serif;
+}
+
+.gameboy-container {
+    position: relative;
+    perspective: 1000px;
+    border: 5px solid #333;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#gameboy {
+    width: 300px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s;
+    width: 80px;
+    filter: drop-shadow(0 0 10px #000);
+}
+
+#mario {
+    top: 20%;
+    left: 20%;
+}
+
+#pokemon {
+    top: 20%;
+    right: 20%;
+}
+
+#zelda {
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+#patopokemon {
+    top: 5%;
+    left: 5%;
+}
+
+#pokemonagua {
+    top: 90%;
+    right: 5%;
+}
+
+#pokemoon {
+    bottom: 5%;
+    left: 5%;
+}
+
+#coin {
+    top: 5%;
+    right: 90%;
+}
+
+
+@keyframes moveAnimation {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    25% { transform: translate(-60%, -40%) scale(1.1); }
+    50% { transform: translate(-40%, -60%) scale(0.9); }
+    75% { transform: translate(-30%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.moving {
+    animation: moveAnimation 5s infinite;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #gameboy {
+        width: 200px;
+    }
+
+    .game-img {
+        width: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    #gameboy {
+        width: 150px;
+    }
+
+    .game-img {
+        width: 30px;
+    }
+}
